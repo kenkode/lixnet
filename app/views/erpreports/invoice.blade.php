@@ -159,9 +159,9 @@ function asMoney($value) {
          <table class="inv" style="width:100%; border-collapse:unset;">
            
            <tr>
-            <td style="border-bottom:1px solid #000">Item</td>
-            <td style="border-bottom:1px solid #000;width 100px !important">Description</td>
-            
+            <td style="border-bottom:1px solid #000">Part #</td>
+            <td style="border-bottom:1px solid #000">Description</td>
+            <td style="border-bottom:1px solid #000">License Level</td>
             <td style="border-bottom:1px solid #000">Qty</td>
             <td style="border-bottom:1px solid #000">Rate</td>
            
@@ -182,7 +182,7 @@ function asMoney($value) {
           <tr>
             <td >{{ $orderitem->item->name}}</td>
             <td>{{ $orderitem->item->description}}</td>
-            
+            <td>{{ $orderitem->item->license_level}}</td>
             <td>{{ $orderitem->quantity}}</td>
             <td>{{ asMoney($orderitem->price)}}</td>
             <td> {{asMoney($orderitem->price * $orderitem->quantity)}}</td>
@@ -201,7 +201,7 @@ function asMoney($value) {
           </tr>
           @endfor -->
           <tr>
-            <td style="border-top:1px solid #000" rowspan="6" colspan="3">&nbsp;</td>
+            <td style="border-top:1px solid #000" rowspan="6" colspan="4">&nbsp;</td>
             
             <td style="border-top:1px solid #000" ><strong>Subtotal</strong> </td><td style="border-top:1px solid #0000" colspan="1">KES {{asMoney($total)}}</td></tr><tr>
 

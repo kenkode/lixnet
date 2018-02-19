@@ -49,8 +49,9 @@ function asMoney($value) {
       <thead>
 
         <th>#</th>
-        <th>Name</th>
-        <th>Description</th>
+        <th width="150">Name</th>
+        <th width="250">Description</th>
+        <th>License Level</th>
         <th>Type</th>
         <th>Purchase Price</th>
         <th>Selling Price</th>
@@ -67,6 +68,7 @@ function asMoney($value) {
           <td> {{ $i }}</td>
           <td>{{ $item->name }}</td>
           <td>{{ $item->description }}</td>
+          <td>{{ $item->license_level }}</td>
           <td>{{ $item->type }}</td>
           <td align="right">{{ asMoney($item->purchase_price) }}</td>
           <td align="right">{{ asMoney($item->selling_price) }}</td>

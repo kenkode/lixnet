@@ -36,6 +36,10 @@
             <textarea rows="5" class="form-control" name="description" id="description" >{{$item->description}}</textarea>
         </div>
 
+        <div class="form-group">
+            <label for="username">License Level :</label>
+            <input class="form-control" placeholder="" type="text" name="license_level" id="license_level" value="{{$item->license_level}}" >
+        </div>
 
          <div class="radio">
           <label>

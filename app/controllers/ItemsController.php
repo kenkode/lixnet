@@ -48,7 +48,7 @@ class ItemsController extends \BaseController {
 		$item->sku= Input::get('sku');
 		$item->tag_id = Input::get('tag');
 		$item->reorder_level = Input::get('reorder');
-
+        $item->license_level = Input::get('license_level');
 		$item->type = Input::get('type');		
 
 		$item->save();
@@ -106,7 +106,7 @@ class ItemsController extends \BaseController {
 		$item->sku= Input::get('sku');
 		$item->tag_id = Input::get('tag');
 		$item->reorder_level = Input::get('reorder');
-
+        $item->license_level = Input::get('license_level');
 		$item->type = Input::get('type');
 
 		$item->update();

@@ -37,6 +37,11 @@
             <textarea rows="5" class="form-control" name="description" id="description" >{{ Input::old('email_office') }}</textarea>
         </div>
 
+        <div class="form-group">
+            <label for="username">License Level :</label>
+            <input class="form-control" placeholder="" type="text" name="license_level" id="license_level" value="{{Input::old('license_level')}}" >
+        </div>
+
         <div class="radio">
           <label>
               <input type="radio" name="type" id="product" value="product">
