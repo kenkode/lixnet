@@ -46,7 +46,8 @@ $(document).ready(function(){
 
 <div class="row">
     <div class="col-lg-12">
-    <a href="{{URL::to('erpReports/PurchaseOrder/'.$order->id)}}" class="btn btn-primary"><i class="glyphicon glyphicon-file fa-fw"></i> Generate Purchase Order</a>
+    <a href="{{URL::to('erpReports/PurchaseOrder/'.$order->id)}}" class="btn btn-primary" target="_blank"><i class="glyphicon glyphicon-file fa-fw"></i> Generate Purchase Order</a>
+    <a href="{{URL::to('erppurchaseorder/adddetails/'.$order->id)}}" class="btn btn-success btn-sm"><i class="glyphicon glyphicon-plus fa-fw"></i> Add details</a>
     <!-- <a href="#" class="btn btn-primary"> Make Payment</a> -->
     </div>
 </div>

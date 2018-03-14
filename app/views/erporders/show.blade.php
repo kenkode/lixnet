@@ -53,6 +53,7 @@ $(document).ready(function(){
     @else
         <a href="{{URL::to('erpReports/receipt/'.$order->id)}}" class="btn btn-primary btn-sm" target="_blank"><i class="glyphicon glyphicon-file fa-fw"></i> Delivery Note/Receipt</a>
     @endif
+    <a href="{{URL::to('erporder/receipt/edit/'.$order->id)}}" class="btn btn-success btn-sm"><i class="glyphicon glyphicon-plus fa-fw"></i> Add details</a>
     </div>
 </div>
 

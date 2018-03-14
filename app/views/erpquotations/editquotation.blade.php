@@ -12,6 +12,12 @@
 	var amnt = 0;
 </script>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<!-- Include Editor style. -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
 @section('content')
 
 <div class="row">
@@ -233,17 +239,51 @@ Session::forget('error');
 				}
 
 			</script>
+
 			
 			<div class="row">
-			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<h3>Additional Details</h3>
+			<div class="form-group">
+            <label for="username">Invoice Header :</label>
+            <input class="form-control" placeholder="" type="text" name="invoice_header" id="invoice_header" value="{{$order->invoice_header}}">
+        </div>
+
+        <div class="form-group">
+            <label for="username">Quotation Header :</label>
+            <input class="form-control" placeholder="" type="text" name="quotation_header" id="quotation_header" value="{{$order->quotation_header}}">
+        </div>
+
+         <div class="form-group">
+            <label for="username">Other Details:</label>
+            <textarea rows="20" class="form-control" name="quotation_details" id="quotation_details" >{{$order->quotation_details}}</textarea>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			    
 			    		<hr>
 			        <a class="btn btn-danger btn-sm" href="{{ URL::to('erpquotations/show/'.$order->id)}}">Cancel </a>
 			        <input type="submit" class="btn btn-primary btn-sm pull-right" value="Process"/>
 			 		</div>
 		 	</div>
+		 </div>
 		</form>
 	</div>
 </div>
+
+<!-- Include jQuery lib. -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- Include Editor JS files. -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+
+<!-- Initialize the editor. -->
+<script>
+  $(function() {
+    $('textarea').froalaEditor()
+  });
+</script>
 
 <script type="text/javascript">
 	$(document).ready(function(){

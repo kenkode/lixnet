@@ -25,10 +25,10 @@ function asMoney($value) {
 
 <style>
 
-@page { margin: 170px 20px; }
- .header { position: fixed; left: 0px; top: -150px; right: 0px; height: 150px;  text-align: center; }
- .content {margin-top: -120px; margin-bottom: -150px}
- .footer { position: fixed; left: 0px; bottom: -180px; right: 0px; height: 50px;  }
+@page { margin: 50px 20px; }
+ .header { position: fixed; left: 0px; top: -30px; right: 0px; height: 150px;  text-align: center; }
+ .content {margin-top: -30px; margin-bottom: -30px}
+ .footer { position: fixed; left: 0px; bottom: -60px; right: 0px; height: 50px;  }
  .footer .page:after { content: counter(page, upper-roman); }
 
 
@@ -104,7 +104,13 @@ function asMoney($value) {
             <td>&nbsp;</td>
             
             <td colspan="2" >
-                  <strong>Receipt</strong>
+                  <strong>
+                  @if($erporder->sale_header != null || $erporder->sale_header != "")
+                    {{$erporder->sale_header}}
+                    @else
+                    Receipt
+                    @endif
+                  </strong>
                 <table class="demo" style="width:100%">
                   
                   <tr >
@@ -225,13 +231,9 @@ $payments = Erporder::getTotalPayments($erporder);
 </div>
 
 
-
-
-
-
-
-   
-
+<div>
+{{$erporder->sale_details}}
+</div>
 
 
 <div class="footer">

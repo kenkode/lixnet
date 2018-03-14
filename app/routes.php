@@ -3173,6 +3173,20 @@ Route::get('erpquotations/edit/{id}', function($id){
 
 });
 
+Route::get('erppurchaseorder/adddetails/{id}', function($id){
+  $order = Erporder::findorfail($id);
+  //return $tax_orders;
+  return View::make('erppurchases.adddetails', compact('order'));
+
+});
+
+Route::get('erporder/receipt/edit/{id}', function($id){
+  $order = Erporder::findorfail($id);
+  //return $tax_orders;
+  return View::make('erporders.adddetails', compact('order'));
+
+});
+
 
 /**
  * ADD ITEMS TO EXISTING ORDER
@@ -3202,6 +3216,24 @@ Route::post('erpquotations/edit/add', function(){
     }
 });
 
+Route::post('erporder/receipt/edit/{id}', function($id){
+    $order = Erporder::findOrFail($id);
+    $order->sale_header = Input::get('header');
+    $order->sale_details = Input::get('sale_details');
+    $order->update();
+
+    return View::make('erporders.show', compact('order'));
+});
+
+Route::post('erppurchaseorder/adddetails/{id}', function($id){
+    $order = Erporder::findOrFail($id);
+    $order->purchase_header = Input::get('header');
+    $order->purchase_details = Input::get('purchase_details');
+    $order->update();
+
+    return View::make('erppurchases.show', compact('order'));
+});
+
 
 /**
  * COMMIT CHANGES
@@ -3220,6 +3252,10 @@ Route::post('erpquotations/edit/{id}', function($id){
 
     $discount = Input::get('discount');
     $order->discount_amount = $discount;
+    $order->invoice_header = Input::get('invoice_header');
+    $order->quotation_header = Input::get('quotation_header');
+    $order->quotation_details = Input::get('quotation_details');
+
 
     $tax = Input::get('tax');
     $rate = Input::get('rate');
