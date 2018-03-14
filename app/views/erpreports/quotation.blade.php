@@ -30,7 +30,9 @@ function asMoney($value) {
  .content {margin-top: -30px; margin-bottom: -30px}
  .footer { position: fixed; left: 0px; bottom: -60px; right: 0px; height: 50px;  }
  
-
+*{
+  font-size: 11px !important;
+}
 
   .demo {
     border:1px solid #000;

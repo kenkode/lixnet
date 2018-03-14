@@ -31,6 +31,9 @@ function asMoney($value) {
  .footer { position: fixed; left: 0px; bottom: -60px; right: 0px; height: 50px;  }
  .footer .page:after { content: counter(page, upper-roman); }
 
+*{
+  font-size: 11px !important;
+}
 
   .demo {
     border:1px solid #C0C0C0;
