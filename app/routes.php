@@ -3262,7 +3262,7 @@ Route::post('erpquotations/edit/{id}', function($id){
 
     for($i=0; $i < count($rate);  $i++){
         if(count(TaxOrder::getAmount($rate[$i],$order->order_number)) > 0){
-            $txOrder = TaxOrder::findOrfail($rate[$i]);
+            $txOrder = TaxOrder::where('tax_id',$rate[$i])->first();
             $txOrder->amount = $tax[$i];
             $txOrder->update();
         } else{
