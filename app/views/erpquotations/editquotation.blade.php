@@ -189,7 +189,7 @@ Session::forget('error');
 
 				// onfocusOut - add
 				function getTotal(itemNum){
-					var itemTotal = $("#amount"+itemNum).text().replace(/,/g, '');
+					var itemTotal = $("#newQty"+itemNum).val().replace(/,/g, '') * $("#newPrice"+itemNum).val().replace(/,/g, '');
 					total = total + parseFloat(itemTotal);
 					//$('#newQty'+itemNum).addClass('changed');
 					$('#payable').val(total);
