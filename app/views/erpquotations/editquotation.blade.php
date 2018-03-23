@@ -93,7 +93,7 @@ Session::forget('error');
 								<input type="number" id="newQty{{$count}}" class="form-control input-sm" name="newQty{{$orderitem->item_id}}" value="{{$orderitem['quantity']}}" onkeyup="calculate({{$count}});" onblur="getTotal({{$count}});" onfocus="removeCount({{$count}})">
 							</td>
 							<td id="{{$count}}">
-								<input type="number" id="newPrice{{$count}}" class="form-control input-sm" name="newPrice{{$orderitem->item_id}}" value="{{$orderitem['price']}}" onkeyup="calculate({{$count}});" onblur="getTotal({{$count}});" onfocus="removeCount({{$count}})">
+								<input type="text" id="newPrice{{$count}}" class="form-control input-sm" name="newPrice{{$orderitem->item_id}}" value="{{$orderitem['price']}}" onkeyup="calculate({{$count}});" onblur="getTotal({{$count}});" onfocus="removeCount({{$count}})">
 							</td>
 							<!--<td id="{{$count}}">{{asMoney($orderitem['price'])}}</td>-->
 							<td id="amount{{$count}}">{{asMoney($amount)}}</td>	
